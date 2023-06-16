@@ -2,7 +2,7 @@ apiVersion: k8s.ovn.org/v1
 kind: EgressFirewall
 metadata:
   name: default
-  namespace: app-lni-prd
+  namespace: default
 spec:
   egress:
     - type: Allow
