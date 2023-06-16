@@ -1,0 +1,25 @@
+apiVersion: k8s.ovn.org/v1
+kind: EgressFirewall
+metadata:
+  name: default
+  namespace: app-lni-prd
+spec:
+  egress:
+    - type: Allow
+      ports:
+      - port: 1521
+        protocol: "TCP"
+      to:
+        dnsName: "oradbc-prd-40.office.intern"
+    - to:
+        cidrSelector: 172.19.113.9/32
+      type: Allow
+    - to:
+        cidrSelector: 172.19.113.10/32
+      type: Allow
+    - to:
+        cidrSelector: 172.19.113.11/32
+      type: Allow
+    - to:
+        cidrSelector: 0.0.0.0/0
+      type: Deny
