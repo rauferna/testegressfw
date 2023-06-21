@@ -2,7 +2,7 @@ apiVersion: k8s.ovn.org/v1
 kind: EgressFirewall
 metadata:
   name: default
-  namespace: new-ns
+  namespace: testfw
 spec:
   egress:
     - type: Allow
@@ -12,13 +12,13 @@ spec:
       to:
         dnsName: "oradbc-prd-40.office.intern"
     - to:
-        cidrSelector: 172.19.113.9/32
+        cidrSelector: 172.19.113.9
       type: Allow
     - to:
-        cidrSelector: 172.19.113.10/32
+        cidrSelector: 172.19.113.10
       type: Allow
     - to:
-        cidrSelector: 172.19.113.11/32
+        cidrSelector: 172.19.113.11
       type: Allow
     - to:
         cidrSelector: 0.0.0.0/0
