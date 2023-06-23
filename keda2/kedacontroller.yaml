@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: KedaController
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: '2'
+  finalizers:
+    - finalizer.kedacontroller.keda.sh
+  labels:
+    app.kubernetes.io/instance: keda
+  name: keda
+  namespace: openshift-keda
+spec:
+  admissionWebhooks:
+    logEncoder: console
+    logLevel: info
+  metricsServer:
+    logLevel: '0'
+  operator:
+    logEncoder: console
+    logLevel: info
+  watchNamespace: ''
