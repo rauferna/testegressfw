@@ -9,4 +9,5 @@ metadata:
     app.kubernetes.io/part-of: keda-operator    
     app.kubernetes.io/version: 2.10.1
     argocd.argoproj.io/managed-by: openshift-gitops
+    namespace: openshift-keda
   name: openshift-keda
