@@ -15,7 +15,3 @@ spec:
     logEncoder: console
     logLevel: info
   watchNamespace: ""
-status:
-  phase: Installation Succeeded
-  reason: KEDA v2.10.1 is installed in namespace 'openshift-keda'
-  version: 2.10.1
