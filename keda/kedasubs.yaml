@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/openshift-custom-metrics-autoscaler-operator.openshift-keda: ""
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "1"
   name: openshift-custom-metrics-autoscaler-operator
   namespace: openshift-keda
 spec:
