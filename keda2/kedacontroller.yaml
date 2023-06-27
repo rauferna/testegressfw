@@ -2,6 +2,7 @@ apiVersion: keda.sh/v1alpha1
 kind: KedaController
 metadata:
   annotations:
+  argocd.argoproj.io/sync-wave: "-1"
   finalizers:
     - finalizer.kedacontroller.keda.sh
   labels:
