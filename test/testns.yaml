@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: ""
+    openshift.io/requester: system:admin
+    openshift.io/sa.scc.mcs: s0:c26,c20
+    openshift.io/sa.scc.supplemental-groups: 1000690000/10000
+    openshift.io/sa.scc.uid-range: 1000690000/10000
+  creationTimestamp: "2023-06-29T12:41:08Z"
+  labels:
+    testlabel: test
+    kubernetes.io/metadata.name: testns
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: v1.24
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: v1.24
+  name: testns
+  resourceVersion: "3968367"
+spec:
+  finalizers:
+  - kubernetes
