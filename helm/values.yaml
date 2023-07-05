@@ -1,0 +1,30 @@
+channelVersion: "stable"
+metallb:
+  metallb:
+    - name: tc-default
+      cidr: 10.56.236.16/28
+      local_asn: 65344
+      remote_asn: 15480  
+      peer01: 10.56.106.2
+      peer02: 10.56.106.3
+
+    - name: tc-control
+      cidr: 10.58.34.64/28
+      local_asn: 65344
+      remote_asn: 15480
+      peer01: 10.59.170.2
+      peer02: 10.59.170.3
+
+    - name: tc-prof-fe
+      cidr: 10.58.5.144/28
+      local_asn: 65344
+      remote_asn: 15480
+      peer01: 10.59.178.2
+      peer02: 10.59.178.3
+
+    - name: tc-om-default
+      cidr: 10.58.216.64/28
+      local_asn: 65344
+      remote_asn: 15480
+      peer01: 10.58.154.2
+      peer02: 10.58.154.3
