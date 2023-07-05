@@ -1,0 +1,99 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  creationTimestamp: '2023-06-08T12:16:31Z'
+  generation: 6
+  managedFields:
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:template':
+            .: {}
+            'f:metadata':
+              .: {}
+              'f:name': {}
+            'f:spec':
+              .: {}
+              'f:destination':
+                .: {}
+                'f:server': {}
+              'f:project': {}
+              'f:source':
+                .: {}
+                'f:path': {}
+                'f:repoURL': {}
+              'f:syncPolicy':
+                .: {}
+                'f:automated':
+                  .: {}
+                  'f:prune': {}
+                  'f:selfHeal': {}
+                'f:retry':
+                  .: {}
+                  'f:backoff':
+                    .: {}
+                    'f:duration': {}
+                    'f:factor': {}
+                    'f:maxDuration': {}
+                  'f:limit': {}
+      manager: OpenAPI-Generator
+      operation: Update
+      time: '2023-06-15T14:22:35Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+      manager: argocd-applicationset-controller
+      operation: Update
+      subresource: status
+      time: '2023-06-19T16:51:13Z'
+    - apiVersion: argoproj.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:generators': {}
+          'f:template':
+            'f:spec':
+              'f:source':
+                'f:targetRevision': {}
+      manager: Mozilla
+      operation: Update
+      time: '2023-06-21T10:04:33Z'
+  name: cluster-config
+  namespace: openshift-gitops
+  resourceVersion: '10453152'
+  uid: 3fd06a9c-e041-403c-b027-6c7d4a7c169a
+spec:
+  generators:
+    - git:
+        directories:
+          - path: clusters/st03-b/*
+        repoURL: >-
+          https://gitlab.internal.vodafoneziggo.com/caas-telco/git-caastelco-postdeploy-argocd.git
+        revision: feature/remote-helm-reference
+  template:
+    metadata:
+      name: '{{ path.basename }}'
+    spec:
+      destination:
+        server: 'https://kubernetes.default.svc'
+      project: default
+      source:
+        path: '{{ path }}'
+        repoURL: >-
+          https://gitlab.internal.vodafoneziggo.com/caas-telco/git-caastelco-postdeploy-argocd.git
+        targetRevision: feature/remote-helm-reference
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        retry:
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 10m
+          limit: 100
