@@ -3,10 +3,10 @@ kind: Namespace
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
-
   labels:
     network.openshift.io/policy-group: openshift-keda
     app.kubernetes.io/name: openshift-keda    
     app.kubernetes.io/part-of: keda-operator    
     app.kubernetes.io/version: 2.10.1
+    testlabel: test
   name: openshift-keda
