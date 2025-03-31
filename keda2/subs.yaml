@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "2"
   name: openshift-custom-metrics-autoscaler-operator
-  namespace: openshift-keda
+  namespace: testapp
 spec:
   channel: stable
   installPlanApproval: Manual
