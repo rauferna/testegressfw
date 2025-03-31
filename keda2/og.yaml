@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
   name: openshift-keda
-  namespace: openshift-keda
+  namespace: testapp
 spec:
   targetNamespaces:
-    - openshift-keda
+    - testapp
